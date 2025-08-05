@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #65b310;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cricketscorer.SignUp">
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="firstImage" fitHeight="400.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/Wicket_being_hit_by_a_ball.jpg" />
+                    </image></ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="404.0" prefWidth="429.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="121.0" fitWidth="135.0" layoutX="140.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/user.png" />
+                    </image></ImageView>
+                <Label fx:id="aaa" layoutX="93.0" layoutY="235.0" text="Username: ">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="ppp" layoutX="95.0" layoutY="266.0" text="Password: ">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="username" layoutX="190.0" layoutY="236.0" promptText="Username" />
+                <PasswordField fx:id="password" layoutX="190.0" layoutY="267.0" promptText="Password" />
+                <Label layoutX="16.0" layoutY="14.0" prefHeight="45.0" prefWidth="367.0" text="Cricket Scorer Simulator">
+                    <font>
+                        <Font name="Times New Roman" size="36.0" />
+                    </font>
+                </Label>
+            <Button fx:id="signUpButton" layoutX="150.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="27.0" prefWidth="115.0" text="Sign Up" />
+            <PasswordField fx:id="confirmPassword" layoutX="190.0" layoutY="300.0" promptText="Password" />
+            <Label layoutX="24.0" layoutY="299.0" text="Confirm Password: ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="statusLabel" layoutX="126.0" layoutY="200.0" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>

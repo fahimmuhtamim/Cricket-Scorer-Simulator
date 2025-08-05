@@ -1,0 +1,39 @@
+Asia Cup
+Date: 2024-08-21
+Teams:
+India
+Pakistan
+Bangladesh
+Matches:
+India|Pakistan
+Overs: 3
+Rohit|Gill|Kohli|Rahul|Yadav|Hardik|Jadeja|Ashwin|Bumrah|Siraj|Shami|
+Imam|Fakhar|Babar|Rizwan|Shadab|Salman|Faheem|Shaheen|Nasim|Amir|Haris|
+Rohit|Kohli|
+Shaheen|1 0 4 0 2 1 Haris|wd 0 4 b+4 6 0 2 Amir|1 1 0 4 wd 1 b+1 
+Babar|Rizwan|Fakhar|Salman|
+Siraj|0 wk 4 2 1 0 Bumrah|wd 6 1 0 1 6 4 Hardik|4 1 0 0 wk 1+wk
+Bangladesh|India
+Overs: 3
+Tamim|Litton|Soumya|Mushfiqur|Shakib|Mahmudullah|Mahedi|Saif|Rishad|Taskin|Mustafizur|
+Rohit|Gill|Kohli|Rahul|Yadav|Hardik|Jadeja|Ashwin|Bumrah|Siraj|Shami|
+Tamim|Litton|Mushfiqur|
+Bumrah|1 0 4 0 6 1 Siraj|wd+4 1 0 2 1 4 0 Jadeja|wk b+1 4 0 4 2
+Rohit|Kohli|Hardik|Jadeja|
+Taskin|2 0 6 1 wk 0 Mahedi|wd 1 0 1 2 4 0 Mustafizur|wk 4 1 2 0 6
+Bangladesh|Pakistan
+Overs: 3
+a|b|c|d|
+e|f|g|h|
+a|b|c
+e|1 2 3 4 wd+2 wk 4 4 6 4 f|1 2 1 2 1 3 0 2 1 0 3 3 0 g|2 4 6 nb+1 3 4 1
+
+
+Bangladesh|Pakistan
+Overs: 5
+a1|a2|a3|a4|
+b1|b2|b3|b4|
+
+
+
+

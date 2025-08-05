@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cricketscorer.TournamentViewController">
+   <top>
+      <VBox prefHeight="140.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 2);" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Header Section with Back Button -->
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="800.0" style="-fx-padding: 15px;">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 20px; -fx-background-radius: 20px; -fx-font-weight: bold; -fx-cursor: hand;" text="← Back">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+
+            <!-- Tournament Title Section -->
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="800.0" style="-fx-padding: 0 20px;">
+               <children>
+                  <VBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label fx:id="tournamentTitleLabel" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Tournament Name">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-style: italic;" text="Tournament Management Dashboard">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Action Buttons Section -->
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="800.0" spacing="20.0" style="-fx-padding: 10px 20px 20px 20px;">
+               <children>
+                  <Button fx:id="newMatchButton" mnemonicParsing="false" onAction="#handleNewMatch" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to right, #56ab2f, #a8e6cf); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1); -fx-cursor: hand;" text="🏏 New Match">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+
+                  <Button fx:id="pointTableView" mnemonicParsing="false" onAction="#handlePointTableView" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to right, #ff6b6b, #ffa8a8); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1); -fx-cursor: hand;" text="📊 Point Table">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+
+   <center>
+      <VBox prefHeight="460.0" prefWidth="800.0" style="-fx-padding: 30px;" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Matches Section Header -->
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="740.0">
+               <children>
+                  <Label style="-fx-text-fill: #343a40; -fx-font-weight: bold;" text="🏆 Tournament Matches">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+
+            <!-- Matches ScrollPane -->
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="375.0" prefWidth="740.0" style="-fx-background-color: white; -fx-border-color: #dee2e6; -fx-border-width: 2px; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2);" vbarPolicy="AS_NEEDED">
+               <content>
+                  <VBox fx:id="matchListVBox" prefWidth="720.0" spacing="15.0" style="-fx-padding: 20px; -fx-background-color: white; -fx-background-radius: 15px;">
+                     <children>
+                        <!-- Empty state for when no matches exist -->
+                        <VBox alignment="CENTER" prefHeight="300.0" prefWidth="720.0" spacing="15.0" style="-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-width: 2px; -fx-border-style: dashed; -fx-border-radius: 12px; -fx-background-radius: 12px;">
+                           <children>
+                              <Label style="-fx-text-fill: #6c757d; -fx-font-size: 64px;" text="🏏" />
+                              <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;" text="No matches scheduled yet">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label style="-fx-text-fill: #6c757d;" text="Click 'New Match' to schedule your first match">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#handleNewMatch" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 18px; -fx-border-radius: 18px; -fx-cursor: hand;" text="+ Add First Match">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

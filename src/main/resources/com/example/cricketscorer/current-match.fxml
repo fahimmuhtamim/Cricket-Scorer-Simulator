@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cricketscorer.CurrentMatchController">
+    <children>
+        <!-- Match Title -->
+        <Label fx:id="team1Label" layoutX="80.0" layoutY="20.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1E90FF;" text="Australia" />
+        <Label layoutX="212.0" layoutY="22.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="vs" />
+        <Label fx:id="team2Label" layoutX="250.0" layoutY="20.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FF6347;" text="West Indies" />
+
+        <!-- Team Scores -->
+        <Label fx:id="team1TotalScore" layoutX="80.0" layoutY="45.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1E90FF;" text="0-0" />
+        <Label fx:id="team2TotalScore" layoutX="250.0" layoutY="45.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #FF6347;" text="0-0" />
+
+        <!-- Team Status (Overs) -->
+        <Label fx:id="team1OversLabel" layoutX="80.0" layoutY="65.0" style="-fx-font-size: 12px; -fx-font-style: italic;" text="0/2" />
+        <Label fx:id="team2OversLabel" layoutX="250.0" layoutY="65.0" style="-fx-font-size: 12px; -fx-font-style: italic;" text="0/2" />
+
+        <!-- Team 1 Batting Card (Left Top) -->
+        <VBox fx:id="team1BattingVBox" layoutX="30.0" layoutY="119.0" prefHeight="120.0" prefWidth="240.0" spacing="3.0" style="-fx-border-color: #1E90FF; -fx-border-width: 2px; -fx-padding: 10px; -fx-background-color: #F0F8FF;">
+            <children>
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #1E90FF;" text="Team A Batting" />
+                <!-- Content will be populated dynamically -->
+            </children>
+        </VBox>
+
+        <!-- Team 2 Bowling Card (Right Top) -->
+        <VBox fx:id="team2BowlingVBox" layoutX="280.0" layoutY="119.0" prefHeight="120.0" prefWidth="240.0" spacing="3.0" style="-fx-border-color: #B22222; -fx-border-width: 2px; -fx-padding: 10px; -fx-background-color: #FFE4E1;">
+            <children>
+                <Label prefHeight="17.0" prefWidth="221.0" style="-fx-font-weight: bold; -fx-text-fill: #B22222;" text="Team B Bowling" />
+                <!-- Content will be populated dynamically -->
+            </children>
+        </VBox>
+
+        <!-- Team 2 Batting Card (Right Bottom) -->
+        <VBox fx:id="team2BattingVBox" layoutX="280.0" layoutY="300.0" prefHeight="120.0" prefWidth="240.0" spacing="3.0" style="-fx-border-color: #FF6347; -fx-border-width: 2px; -fx-padding: 10px; -fx-background-color: #FFF5EE;">
+            <children>
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #FF6347;" text="Team B Batting" />
+                <!-- Content will be populated dynamically -->
+            </children>
+        </VBox>
+
+        <!-- Team 1 Bowling Card (Left Bottom) -->
+        <VBox fx:id="team1BowlingVBox" layoutX="30.0" layoutY="300.0" prefHeight="120.0" prefWidth="240.0" spacing="3.0" style="-fx-border-color: #228B22; -fx-border-width: 2px; -fx-padding: 10px; -fx-background-color: #F0FFF0;">
+            <children>
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #228B22;" text="Team A Bowling" />
+                <!-- Content will be populated dynamically -->
+            </children>
+        </VBox>
+
+        <!-- Innings Labels -->
+        <Label layoutX="30.0" layoutY="101.0" text="1st Innings" textFill="#279f09">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="282.0" text="2nd Innings" textFill="#279f09">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+
+        <!-- Match Result Label -->
+        <Label fx:id="matchResultLabel" layoutX="30.0" layoutY="435.0" prefHeight="32.0" prefWidth="450.0" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #FF6347;" text="Match in Progress">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+
+        <!-- Overview ScrollPane (Horizontal) -->
+        <ScrollPane fx:id="overviewScroll" fitToHeight="true" hbarPolicy="AS_NEEDED" layoutX="30.0" layoutY="460.0" prefHeight="49.0" prefWidth="490.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CCCCCC; -fx-border-width: 1px;" vbarPolicy="NEVER">
+            <content>
+                <AnchorPane minHeight="47.0" minWidth="0.0" prefHeight="47.0" prefWidth="490.0" />
+            </content>
+        </ScrollPane>
+
+        <!-- Next Ball Update Label -->
+        <Label layoutX="30.0" layoutY="515.0" prefHeight="25.0" prefWidth="135.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4B0082;" text="Next Ball Update" />
+
+        <!-- Scoring Buttons with Equal Spacing -->
+        <!-- Extra Buttons (Left Side) -->
+        <Button fx:id="wicketBtn" layoutX="30.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #FF4444; -fx-text-fill: white; -fx-font-weight: bold;" text="Wicket" />
+        <Button fx:id="wideBtn" layoutX="91.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" style="-fx-background-color: #FFA500; -fx-text-fill: white;" text="Wide" />
+        <Button fx:id="byBtn" layoutX="141.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #8A2BE2; -fx-text-fill: white;" text="By" />
+        <Button fx:id="noBallBtn" layoutX="181.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #DC143C; -fx-text-fill: white;" text="No Ball" />
+        <Button fx:id="undoBtn" layoutX="248.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #696969; -fx-text-fill: white; -fx-font-weight: bold;" text="Undo" />
+
+        <!-- Run Buttons (Right Side) with Equal Spacing -->
+        <Button fx:id="btn0" layoutX="320.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #808080; -fx-text-fill: white; -fx-font-weight: bold;" text="0" />
+        <Button fx:id="btn1" layoutX="355.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #4169E1; -fx-text-fill: white; -fx-font-weight: bold;" text="1" />
+        <Button fx:id="btn2" layoutX="390.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-weight: bold;" text="2" />
+        <Button fx:id="btn3" layoutX="425.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #FFD700; -fx-text-fill: black; -fx-font-weight: bold;" text="3" />
+        <Button fx:id="btn4" layoutX="460.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #FF1493; -fx-text-fill: white; -fx-font-weight: bold;" text="4" />
+        <Button fx:id="btn6" layoutX="495.0" layoutY="548.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #FF0000; -fx-text-fill: white; -fx-font-weight: bold;" text="6" />
+
+    </children>
+</AnchorPane>

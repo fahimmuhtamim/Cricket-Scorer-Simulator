@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cricketscorer.PointTableController">
+    <top>
+        <VBox prefHeight="120.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 2);" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Header Section with Back Button -->
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="900.0" style="-fx-padding: 15px;">
+                    <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 20px; -fx-background-radius: 20px; -fx-font-weight: bold; -fx-cursor: hand;" text="← Back">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+
+                <!-- Title Section -->
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="900.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label fx:id="tournamentNameLabel" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Tournament Name - Point Table">
+                                    <font>
+                                        <Font name="System Bold" size="28.0" />
+                                    </font>
+                                </Label>
+                                <Label style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-style: italic;" text="📊 Team standings and statistics">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox prefHeight="530.0" prefWidth="900.0" style="-fx-padding: 30px;" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Point Table Header -->
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="840.0">
+                    <children>
+                        <Label style="-fx-text-fill: #343a40; -fx-font-weight: bold;" text="🏆 Team Rankings">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </HBox>
+
+                <!-- Enhanced Table Container -->
+                <VBox prefHeight="455.0" prefWidth="840.0" style="-fx-background-color: white; -fx-border-color: #dee2e6; -fx-border-width: 2px; -fx-border-radius: 15px; -fx-background-radius: 15px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2); -fx-padding: 20px;">
+                    <children>
+                        <!-- Table Statistics Header -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #f8f9fa; -fx-padding: 10px; -fx-background-radius: 8px;">
+                            <children>
+                                <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;" text="📈 Current Standings">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <!-- Enhanced TableView -->
+                        <TableView fx:id="pointTable" prefHeight="385.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: #e9ecef; -fx-border-width: 1px; -fx-border-radius: 8px; -fx-background-radius: 8px;">
+                            <columns>
+                                <TableColumn fx:id="teamColumn" prefWidth="200.0" style="-fx-alignment: CENTER_LEFT;">
+                                    <graphic>
+                                        <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;" text="🏏 Teams">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="matchesPlayedColumn" prefWidth="100.0" style="-fx-alignment: CENTER;" text="📅 Played">
+                                    <graphic>
+                                        <Label style="-fx-text-fill: #495057; -fx-font-weight: bold;">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="winsColumn" prefWidth="100.0" style="-fx-alignment: CENTER;">
+                                    <graphic>
+                                        <Label style="-fx-text-fill: #28a745; -fx-font-weight: bold;" text="✅ Won">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="lossesColumn" prefWidth="100.0" style="-fx-alignment: CENTER;">
+                                    <graphic>
+                                        <Label style="-fx-text-fill: #dc3545; -fx-font-weight: bold;" text="❌ Lost">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="pointsColumn" prefWidth="100.0" style="-fx-alignment: CENTER;">
+                                    <graphic>
+                                        <Label style="-fx-text-fill: #ffc107; -fx-font-weight: bold;" text="⭐ Points">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="netRunRateColumn" prefWidth="100.0" style="-fx-alignment: CENTER;" text="📊 Net RR">
+                                    <graphic>
+                                        <Label style="-fx-text-fill: #17a2b8; -fx-font-weight: bold;">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: #f8f9fa; -fx-padding: 15px;">
+            <children>
+                <Label style="-fx-text-fill: #6c757d; -fx-font-style: italic;" text="💡 Rankings are updated automatically after each match completion">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
